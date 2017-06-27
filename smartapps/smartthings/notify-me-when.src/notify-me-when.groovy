@@ -32,6 +32,7 @@ definition(
 preferences {
 	section("Choose one or more, when..."){
 		input "button", "capability.button", title: "Button Pushed", required: false, multiple: true //tw
+		input "momentary", "capability.momentary", title: "Momentary Button Pushed", required: false, multiple: true
 		input "motion", "capability.motionSensor", title: "Motion Here", required: false, multiple: true
 		input "contact", "capability.contactSensor", title: "Contact Opens", required: false, multiple: true
 		input "contactClosed", "capability.contactSensor", title: "Contact Closes", required: false, multiple: true
@@ -71,6 +72,7 @@ def updated() {
 
 def subscribeToEvents() {
 	subscribe(button, "button.pushed", eventHandler) //tw
+	subscribe(momentary, "momentary", eventHandler)
 	subscribe(contact, "contact.open", eventHandler)
 	subscribe(contactClosed, "contact.closed", eventHandler)
 	subscribe(acceleration, "acceleration.active", eventHandler)
