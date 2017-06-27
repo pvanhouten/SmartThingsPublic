@@ -72,7 +72,7 @@ def updated() {
 
 def subscribeToEvents() {
 	subscribe(button, "button.pushed", eventHandler) //tw
-	subscribe(momentary, "momentary", eventHandler)
+	subscribe(momentary, "momentary.pushed", eventHandler)
 	subscribe(contact, "contact.open", eventHandler)
 	subscribe(contactClosed, "contact.closed", eventHandler)
 	subscribe(acceleration, "acceleration.active", eventHandler)
